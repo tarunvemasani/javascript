@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Sorting the array and displaying the second smallest number in the array</h1>
+    <div id="demo"></div>
+    <script>
+        const myCustomMapFunction = function(callback) {
+            const newarray=[];
+            // 'this' refers to the array
+            for (let i = 0; i < this.length; i++) {
+                console.log(this[i]);
+                newarray[i]=this[i];
+            }
+            newarray.sort();
+        return newarray[1];
+        }
+        Array.prototype.sortFromScratch = myCustomMapFunction;
+        const arr = [31,52,33,12,7,88];
+        document.getElementById("demo").innerHTML="Array is "+arr;      
+    </script>
+    <hr>
+    <br>
+    <div id="demo3"></div>
+    <script>
+        document.getElementById("demo3").innerHTML="Sorted array is "+arr.sort();
+    </script>
+    <hr>
+    <br>
+    <div id="demo2"></div>
+    <script>
+        console.log("second smallest number is "+arr.sortFromScratch());
+        document.getElementById("demo2").innerHTML=" Second smallest number is "+arr.sortFromScratch();
+    </script>
+</body>
+
+</html>
